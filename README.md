@@ -36,6 +36,7 @@ print(df.head())
 <img width="916" height="288" alt="Screenshot 2026-05-15 134524" src="https://github.com/user-attachments/assets/e017d27b-7a4c-417e-88ca-f79b472a55b6" />
 
 ```
+
 X = df.drop('target',axis=1) 
 y=df['target']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42 )
@@ -44,19 +45,20 @@ sgd_clf.fit(X_train,y_train)
 y_pred=sgd_clf.predict(X_test)
 accuracy=accuracy_score(y_test,y_pred)
 print(f"Accuracy: {accuracy:.3f}")
+
 ```
+
 <img width="172" height="42" alt="Screenshot 2026-05-15 134533" src="https://github.com/user-attachments/assets/023ef39d-9579-4b71-ab50-7560bf99995b" />
 
 ```
 cm=confusion_matrix(y_test,y_pred) 
 print("Confusion Matrix:") 
 print(cm)
-
 ```
+
 <img width="213" height="117" alt="Screenshot 2026-05-15 134546" src="https://github.com/user-attachments/assets/bfcf15ab-1803-4c2d-a88b-e78766f17475" />
+
 ```
-
-
 plt.figure(figsize=(6,4))
 sns.heatmap(cm, annot=True, cmap="Blues", fmt='d', xticklabels=iris.target_names, yticklabels=iris.target_names)
 plt.xlabel("Predicted Label")
