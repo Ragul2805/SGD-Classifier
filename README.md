@@ -51,15 +51,19 @@ print(f"Accuracy: {accuracy:.3f}")
 cm=confusion_matrix(y_test,y_pred) 
 print("Confusion Matrix:") 
 print(cm)
+
 ```
 <img width="213" height="117" alt="Screenshot 2026-05-15 134546" src="https://github.com/user-attachments/assets/bfcf15ab-1803-4c2d-a88b-e78766f17475" />
 ```
+
+
 plt.figure(figsize=(6,4))
 sns.heatmap(cm, annot=True, cmap="Blues", fmt='d', xticklabels=iris.target_names, yticklabels=iris.target_names)
 plt.xlabel("Predicted Label")
 plt.ylabel("True Label")
 plt.title("Confusion Matrix")
 plt.show()
+
 ```
 <img width="692" height="505" alt="Screenshot 2026-05-15 134556" src="https://github.com/user-attachments/assets/71484f9a-57fa-4ac7-bc7f-1eb9898c981b" />
 
